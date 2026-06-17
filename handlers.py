@@ -132,7 +132,8 @@ async def prints(callback: CallbackQuery, state: FSMContext, bot: Bot):
     
     await callback.message.answer("Наші фахівці обов'язково зв'яжуться з вами. Очікуйте на звернення\n")
     data = await state.get_data()
-    admins = os.getenv("admins")
+    admins = os.getenv("admins").split(",")
+    admins = [int(a) for a in admins]
     for a in admins:
         await bot.send_message(
             a, 
