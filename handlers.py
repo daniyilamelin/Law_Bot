@@ -85,7 +85,7 @@ async def category(message: Message, state: FSMContext):
                 InlineKeyboardButton(text = "Цивільні правовідносини", callback_data = "f_cyvil")
             ],
             [
-                InlineKeyboardButton(text = "Трудові суперечки", callback_data = "f_work")
+                InlineKeyboardButton(text = "Трудові спори", callback_data = "f_work")
             ],
             [
                 InlineKeyboardButton(text = "Штрафи/поліція", callback_data = "f_police")
@@ -188,7 +188,7 @@ async def change_something(callback: CallbackQuery, state: FSMContext):
                 InlineKeyboardButton(text = "Цивільні правовідносини", callback_data = "catt_cyvil")
             ],
             [
-                InlineKeyboardButton(text = "Трудові суперечки", callback_data = "catt_work")
+                InlineKeyboardButton(text = "Трудові спори", callback_data = "catt_work")
             ],
             [
                 InlineKeyboardButton(text = "Штрафи/поліція", callback_data = "catt_police")
