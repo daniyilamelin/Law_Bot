@@ -65,7 +65,7 @@ async def start(message: Message):
 
 @offer.message(Command("help_me"))
 async def procces(message: Message, state: FSMContext):
-    await state.update_data(id = message.from_user.id)
+    await state.update_data(id = message.from_user.username)
     await state.set_state(Add_Offer.name)
     await message.answer("Гаразд, давайте почнемо реєстрацію. Вкажіть ваше ПІБ")
 
@@ -138,7 +138,7 @@ async def prints(callback: CallbackQuery, state: FSMContext, bot: Bot):
         await bot.send_message(
             a, 
             f"📝 Нова заява!\n"
-            f"💬  ID: {data['id']}\n "
+            f"💬 Юзернейм: {data['id']}\n "
             f"👤 Ім'я: {data['name']}\n"
             f"📞 Телефон: {data['phone']}\n"
             f"📂 Категорія: {data['category']}\n"
