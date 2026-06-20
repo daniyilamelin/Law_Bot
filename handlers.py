@@ -17,7 +17,8 @@ CATEGORIES = {
     "f_family": "Сімейні питання",
     "f_peace": "Договори",
     "f_law": "Судова допомога",
-    "f_other": "Інше (зазначити в описі)"
+    "f_other": "Інше (зазначити в описі)",
+    "f_war": "Військове право"
 }
 
 class Add_Offer(StatesGroup):
@@ -99,6 +100,10 @@ async def category(message: Message, state: FSMContext):
             [
                 InlineKeyboardButton(text = "Правова допомога", callback_data = "f_law")
             ],
+            [
+                InlineKeyboardButton(text = "Військове право", callback_data = "f_war")
+            ],
+            
             [
                 InlineKeyboardButton(text = "Інше (зазначити в описі)", callback_data = "f_other")
             ],
@@ -204,10 +209,11 @@ async def change_something(callback: CallbackQuery, state: FSMContext):
                 InlineKeyboardButton(text = "Правова допомога", callback_data = "catt_law")
             ],
             [
+                InlineKeyboardButton(text = "Військове право", callback_data = "catt_war")
+            ],
+            [
                 InlineKeyboardButton(text = "Інше (зазначити в описі)", callback_data = "catt_other")
             ],
-
-            ]
         )
         await callback.message.answer("Виберіть категорію в якій вам потрібна допомога", reply_markup = inline_kb)
     else:
@@ -224,7 +230,8 @@ async def new_category(callback: CallbackQuery, state:FSMContext):
     "catt_family": "Сімейні питання",
     "catt_peace": "Договори",
     "catt_law": "Судова допомога",
-    "catt_other": "Інше (зазначити в описі)"
+    "catt_other": "Інше (зазначити в описі)",
+    "catt_war": "Військове право"
     }
     category = CATEGOR.get(callback.data)
 
