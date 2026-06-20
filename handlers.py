@@ -214,6 +214,7 @@ async def change_something(callback: CallbackQuery, state: FSMContext):
             [
                 InlineKeyboardButton(text = "Інше (зазначити в описі)", callback_data = "catt_other")
             ],
+            ]
         )
         await callback.message.answer("Виберіть категорію в якій вам потрібна допомога", reply_markup = inline_kb)
     else:
