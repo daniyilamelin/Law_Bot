@@ -40,5 +40,4 @@ WEBHOOK_HOST=
 python main.py
 ```
 
-## Демо
-[Переглянути демо проекту](https://web.telegram.org/k/#@burmystrov_law_bot)
+
